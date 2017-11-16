@@ -6,6 +6,7 @@
 
 \documentclass[a4paper, 10pt, conference]{ieeeconf}      % Use this line for a4 paper
 
+
 \IEEEoverridecommandlockouts                              % This command is only needed if 
                                                           % you want to use the \thanks command
 
@@ -31,13 +32,14 @@ Automatic Intelligent Plants Caring Robots
 }
 
 
-\author{My name$^{1}$ and Your Teammate's Name$^{2}$% <-this % stops a space
+\author{駱政成$^{1}$ and Your Teammate's Name$^{2}$% <-this % stops a space
 \thanks{*This work was supported by the Robotics Master Program in National Chiao Tung University, Taiwan}% <-this % stops a space
 \thanks{$^{1}$Your name is with National Chiao Tung University, Taiwan. You should put your name as first author
         {\tt\small youremail@papercept.net}}%
 \thanks{$^{2}$You should add your teammates' names here,
         {\tt\small b.d.researcher@ieee.org}}%
 }
+
 
 
 \begin{document}
@@ -55,37 +57,47 @@ Automatic Intelligent Plants Caring Robots
 \hspace*{4mm}Consider the case that you're going abroad for 10 days, and you have no one to take care of them for you, how will your lovely plants be after you come back ?  Or you are working but the burning hot weather has make your plants overwhelmed, how you wish that someone can move the potted plants to a cooler place for you.\\
 \hspace*{4mm}Thus, taking good care of plants has been a crucial issues for many people.\\
 
+\begin{figure}[htbp] % t means put this image at the top 
+\includegraphics[width=0.8\columnwidth]{23602259_1745798205444844_1157434552_n.jpg}
+\centering
+\caption{illustration of ther project}
+\end{figure}
+
 
 \section{SYSTEM ARCHITECTURE \& EQUIPMENTS}
+
+
 
 \subsection{SYSTEM ARCHITECTURE}
 
 
-
-
-
-
-\begin{figure}[b] % t means put this image at the top 
-\includegraphics[width=0.8\columnwidth]{23602259_1745798205444844_1157434552_n.jpg}
+\begin{figure}[htbp] % t means put this image at the top 
+\includegraphics[width=0.8\columnwidth]{car_flowchart.jpg}
 \centering
-\caption{demo of our project}
+\caption{flow chart of duckiebot}
+\end{figure}
+
+\begin{figure}[htbp] % t means put this image at the top 
+\includegraphics[width=0.8\columnwidth]{CmdServer_flowchart.jpg}
+\centering
+\caption{flow chart of control system}
 \end{figure}
 
 \hspace*{4mm}In this project, we will apply some Iot sensors and communication technology, ROS system including lane following, vision recognition, and some mechanical structure into the car and the watering machine. Our main idea is to accomplish an intellectual system which can replace the workload of taking care of the plant. The main control system will receive data from 6 pots in a room. These pots will transmit the information of light and humidity of the plant to the central control system. After receiving data, the control system will judge whether the status of the pot is suitable or not? If the status is not acceptable according to our database. The control system will call duckiebot to move to the certain position of the pot and carry it for watering at watering machine or take it to the place that the sunshine is suitable for the plant. Also, the system will collect all the data from the pot for more detailed information. \\
 \hspace*{4mm}To simplify the problem, we will construct a fixed lane and watering machine for our cars. Next to the lane, there are 6 pot positions. All these positions contain a sticker with Apriltags on the ground. Therefore, our camera are able to recognize it and record the 3D position. \\
 
 
-\begin{figure}[t] % t means put this image at the top 
-\includegraphics[width=0.8\columnwidth]{car_flowchart.jpg}
+
+
+
+\begin{figure}[htbp] % t means put this image at the top 
+\includegraphics[width=0.8\columnwidth]{car_fsm.jpg}
 \centering
-\caption{flow chart of duckiebot}
+\caption{FSM of duckiebot}
 \end{figure}
 
-\begin{figure}[p] % t means put this image at the top 
-\includegraphics[width=0.8\columnwidth]{CmdServer_flowchart.jpg}
-\centering
-\caption{flow chart of control system}
-\end{figure}
+
+
 
 
 \subsection{EQUIPMENTS} 
@@ -110,11 +122,7 @@ Automatic Intelligent Plants Caring Robots
 
 
 
-\begin{figure}[h] % t means put this image at the top 
-\includegraphics[width=0.8\columnwidth]{car_fsm.jpg}
-\centering
-\caption{FSM or duckiebot}
-\end{figure}
+
 
 \section{SPECIFIC AIMS}
 
@@ -122,8 +130,7 @@ Automatic Intelligent Plants Caring Robots
 \item path planning and control
 \end{itemize}
 
-The bot will follow a lane with Apriltag placed on various locations, each Apriltag has a plant beside it. The bot will move when it receives command from the central control unit, and report back when it completes.\\
-
+The bot will drive on a desired path, for moving the plants to a proper place (with sufficient sunlight and water).\\
 
 \section{APPROACH}
 
@@ -131,8 +138,16 @@ The bot will follow a lane with Apriltag placed on various locations, each April
 \item path planning and control
 \end{itemize}
 
-With to position and facing direction of devices. We are able to plan the path of car. To move a plant, drive the car to the front of plant, turn car’s face to the plant, and start to load it.\\
 
+Several Apriltags will be placed at the place, and each Apriltag coresponds to a plant behind it.
+
+The bot will follow a lane with Apriltags.
+
+A central control system will manege all the bots.
+
+The bot will move a specific plant when receives command from the central control system, and report after completion.
+
+We are able to plan the path of the bot, with the position and directions of the bot.
 
 \section{SCHEDULE AND TEAM COLLABORATION}
 
@@ -155,4 +170,3 @@ With to position and facing direction of devices. We are able to plan the path o
 \bibliographystyle{IEEEtran}
 \bibliography{egbib}
 
-\end{document}
