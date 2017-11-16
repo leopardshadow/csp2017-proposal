@@ -72,9 +72,9 @@ Automatic Intelligent Plants Caring Robots
 
 
 \begin{figure}[htbp] % t means put this image at the top 
-\includegraphics[width=0.8\columnwidth]{car_flowchart.jpg}
+\includegraphics[width=0.8\columnwidth]{car_fsm.jpg}
 \centering
-\caption{flow chart of duckiebot}
+\caption{FSM of duckiebot}
 \end{figure}
 
 \begin{figure}[htbp] % t means put this image at the top 
@@ -83,6 +83,14 @@ Automatic Intelligent Plants Caring Robots
 \caption{flow chart of control system}
 \end{figure}
 
+\begin{figure}[htbp] % t means put this image at the top 
+\includegraphics[width=0.8\columnwidth]{car_flowchart.jpg}
+\centering
+\caption{flow chart of duckiebot}
+\end{figure}
+
+
+
 \hspace*{4mm}In this project, we will apply some Iot sensors and communication technology, ROS system including lane following, vision recognition, and some mechanical structure into the car and the watering machine. Our main idea is to accomplish an intellectual system which can replace the workload of taking care of the plant. The main control system will receive data from 6 pots in a room. These pots will transmit the information of light and humidity of the plant to the central control system. After receiving data, the control system will judge whether the status of the pot is suitable or not? If the status is not acceptable according to our database. The control system will call duckiebot to move to the certain position of the pot and carry it for watering at watering machine or take it to the place that the sunshine is suitable for the plant. Also, the system will collect all the data from the pot for more detailed information. \\
 \hspace*{4mm}To simplify the problem, we will construct a fixed lane and watering machine for our cars. Next to the lane, there are 6 pot positions. All these positions contain a sticker with Apriltags on the ground. Therefore, our camera are able to recognize it and record the 3D position. \\
 
@@ -90,11 +98,6 @@ Automatic Intelligent Plants Caring Robots
 
 
 
-\begin{figure}[htbp] % t means put this image at the top 
-\includegraphics[width=0.8\columnwidth]{car_fsm.jpg}
-\centering
-\caption{FSM of duckiebot}
-\end{figure}
 
 
 
@@ -157,7 +160,7 @@ A central control system will manege all the bots.
 
 The bot will move a specific plant when receives command from the central control system, and report after completion.
 
-We are able to plan the path of the bot, with the position and directions of the bot.
+We are able to plan the path of the bot, with the position and directions of the bot.\\\\
 
 \section{SCHEDULE AND TEAM COLLABORATION}
 
